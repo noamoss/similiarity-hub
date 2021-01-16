@@ -12,13 +12,20 @@
 
 ### Techinical Stack:
 
+### prerequisites
+- git
+- python v.3.7.2+
+- pipvenv
+- postgresql 
 
-### Setup and installation
-- git clone
-- `pip install pipenv`
+### local env setup
 - `pipenv install` (in the cloned repo folder)
-- setup a new postgresql DB, or get an existing DB credentials
-- set a FALSK_ENV value: "development" / "production" (i.e. `export FLASK_ENV=development`)
+- setup a new postgresql DB, and/or get an existing live DB credentials
+- set a FALSK_ENV value: "development":  `export FLASK_ENV=development`
+  (set "production" for the live server))
 - `cp _config.py config.py`
 - set the relevant DB crednetials in `config.py`
+- `flask db init` (initialize local db)
+- `flask db migrate -m "Initial db migration"`
+- `flask db upgrade`
 - `flask run`
