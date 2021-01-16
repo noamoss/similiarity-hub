@@ -11,3 +11,14 @@
 
 
 ### Techinical Stack:
+
+
+### Setup and installation
+- git clone
+- `pip install pipenv`
+- `pipenv install` (in the cloned repo folder)
+- setup a new postgresql DB, or get an existing DB credentials
+- set a FALSK_ENV value: "development" / "production" (i.e. `export FLASK_ENV=development`)
+- `cp _config.py config.py`
+- set the relevant DB crednetials in `config.py`
+- `flask run`
