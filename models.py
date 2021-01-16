@@ -30,3 +30,4 @@ class Entity(db.Model):
          features_realtime: {self.features_realtime} formula_realtime: {self.formula_realtime}        
          result_count: {self.result_count}
         """
+        
