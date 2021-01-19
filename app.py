@@ -16,9 +16,11 @@ else:
 db.init_app(app)                      # initiate connection with the database
 migrate = Migrate(app, db)            # migrate data, if needed
 
+
 @app.route('/')
 def hello_world():
     return "Hello, World!"
+
     
 if __name__ == '__main__':            # run the server
     app.run(debug=True)

@@ -1,5 +1,5 @@
 class Config(object):
-     """
+    """
     Set the basic Flask configurations
     """
     DEBUG = False
@@ -8,6 +8,7 @@ class Config(object):
 
     SESSION_COOKIE_SECURE = True
     SQLALCHEMY_TRACK_MODIFICATIONS = True
+
 
 class ProductionConfig(Config):
     """
@@ -20,6 +21,7 @@ class ProductionConfig(Config):
     DB_PASSWORD = ""
     SQLALCHEMY_DATABASE_URI = f"postgresql://{DB_USERNAME}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
 
+
 class DevelopmentConfig(Config):
     """
     Set the specific configurations for the development envrioment
@@ -28,6 +30,7 @@ class DevelopmentConfig(Config):
     SQLALCHEMY_DATABASE_URI = ""
 
     SESSION_COOKIE_SECURE = False
+
 
 class TestingConfig(Config):
     """
