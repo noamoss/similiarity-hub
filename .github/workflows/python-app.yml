@@ -34,7 +34,7 @@ jobs:
     - name: Install dependencies
       if: steps.cache-pipenv.outputs.cache-hit != 'true'
       run: |
-        pipenv install --deploy --dev
+        pipenv --python 3.9 install 
 
     - name: Install lint
       run: |
