@@ -8,6 +8,7 @@ psycopg2-binary = "*"
 flask-sqlalchemy = "*"
 flask-migrate = "*"
 flask = "*"
+pytest = "*"
 
 [dev-packages]
 pylint = "*"
