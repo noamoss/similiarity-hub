@@ -7,7 +7,7 @@ from models import db
 app = Flask(__name__)
 
 
-# check relevant enviroment and load settings
+# check relevant environment and load settings
 if app.config["ENV"] == "production":
     app.config.from_object("config.ProductionConfig")
     print("Production Env")
