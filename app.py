@@ -8,12 +8,12 @@ app = Flask(__name__)
 
 
 # check relevant environment and load settings
-if app.config["ENV"] == "production":
-    app.config.from_object("config.ProductionConfig")
-    print("Production Env")
+if app.config['ENV'] == 'production':
+    app.config.from_object('config.ProductionConfig')
+    print('Production Env')
 else:
-    app.config.from_object("config.DevelopmentConfig")
-    print("Development Env")
+    app.config.from_object('config.DevelopmentConfig')
+    print('Development Env')
 
 
 # initiate connection with the database
@@ -24,7 +24,7 @@ migrate = Migrate(app, db)
 
 @app.route('/')
 def hello_world():
-    return "Hello, World!"
+    return 'Hello, World!'
 
 
 # run the server
