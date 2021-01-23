@@ -5,7 +5,7 @@ db = SQLAlchemy()
 
 class Entity(db.Model):
     __tablename__ = 'entities_types'
-    id = db.Column(db.Integer(),primary_key=True)
+    id = db.Column(db.Integer(), primary_key=True)
     name = db.Column(db.String())
     source = db.Column(db.String())
     features_periodic = db.Column(db.String())
@@ -18,7 +18,7 @@ class Entity(db.Model):
                  features_realtime, formula_realtime, result_count):
         self.id = id
         self.name = name
-        self.source = source 
+        self.source = source
         self.features_periodic = features_periodic
         self.formula_periodic = formula_periodic
         self.features_realtime = features_realtime
@@ -31,7 +31,6 @@ class Entity(db.Model):
          features_periodic: {self.features_periodic} \
              formula_period: {self.formula_periodic}
          features_realtime: {self.features_realtime} \
-             formula_realtime: {self.formula_realtime}        
+             formula_realtime: {self.formula_realtime}
          result_count: {self.result_count}
         """
-        
