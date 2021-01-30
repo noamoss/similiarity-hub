@@ -29,6 +29,7 @@
   (set "production" for the live server))
 - `pipenv shell`
 - `cp _example.config.py config.py`
+- `cp _example.env .env`
 - set the relevant DB credentials in `config.py`
 - `flask db init` (initialize local db)
 - `flask db migrate -m "Initial db migration"`
