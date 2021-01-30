@@ -27,7 +27,12 @@ class DevelopmentConfig(Config):
     Set the specific configurations for the development envrioment
     """
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = ''
+    DB_HOST = ''
+    DB_NAME = ''
+    DB_PORT = ''
+    DB_USERNAME = ''
+    DB_PASSWORD = ''
+    SQLALCHEMY_DATABASE_URI = f"postgresql://{DB_USERNAME}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
 
     SESSION_COOKIE_SECURE = False
 

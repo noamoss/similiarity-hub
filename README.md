@@ -23,7 +23,7 @@
 - setup a new postgresql DB, and/or get an existing live DB credentials
 - set a FALSK_ENV value: "development":  `export FLASK_ENV=development`
   (set "production" for the live server))
-- `cp _config.py config.py`
+- `cp _example.config.py config.py`
 - set the relevant DB crednetials in `config.py`
 - `flask db init` (initialize local db)
 - `flask db migrate -m "Initial db migration"`
