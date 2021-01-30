@@ -6,7 +6,9 @@ from similarity.models import db
 # App object
 app = Flask(__name__)
 
-import similarity.views
+# Importing after the `app` definition to avoid circular dependency.
+# Ignoring "flake8" errors about it.
+import similarity.views # noqa: E402,F401,E261
 
 # check relevant environment and load settings
 if app.config['ENV'] == 'production':
