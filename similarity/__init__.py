@@ -1,11 +1,12 @@
 from flask import Flask
 from flask_migrate import Migrate
-from models import db
+from similarity.models import db
 
 
 # App object
 app = Flask(__name__)
 
+import similarity.views
 
 # check relevant environment and load settings
 if app.config['ENV'] == 'production':
@@ -20,12 +21,6 @@ else:
 db.init_app(app)
 # migrate data, if needed
 migrate = Migrate(app, db)
-
-
-@app.route('/')
-def hello_world():
-    return 'Hello, World!'
-
 
 # run the server
 if __name__ == '__main__':
