@@ -24,9 +24,10 @@
 ### local env setup
 - `pipenv install` (in the cloned repo folder)
 - setup a new postgresql DB, and/or get an existing live DB credentials
-- set a FALSK_ENV value: "development":  `export FLASK_ENV=development`
+- set a FALSK_ENV value "development":  `export FLASK_ENV=development` / add FLASK_ENV=development to the `.env` file
+- set a FLASK_APP value "similarity": `export FLASK_ENV=similarity` / add FLASK_ENV=similarity to the `.env` file
   (set "production" for the live server))
-- `export FLASK_APP=similarity`
+- `pipenv shell`
 - `cp _example.config.py config.py`
 - set the relevant DB credentials in `config.py`
 - `flask db init` (initialize local db)
