@@ -1,16 +1,19 @@
-# similiarity-hub
+# similarity-hub
 
-## Flexible entities similiarity engine for external data source.
+## Flexible entities similarity engine for external data source.
 
 ### Building Blocks [source](https://drive.google.com/file/d/1Ny9az4KV069HtQ5flKEluE9qjzwvwnAG/view?usp=sharing):
 
-<img src="https://raw.githubusercontent.com/noamoss/similiarity-hub/main/similiarity-v01.jpg" />
+<img src="https://raw.githubusercontent.com/noamoss/similarity-hub/main/similarity-v01.jpg" />
 
 ### Project Boards:
 - [Phase 1](https://github.com/noamoss/similiarity-hub/projects/1)
 
 
-### Techinical Stack:
+### Technical Stack:
+- Flask
+- PostgreSQL
+- React
 
 ### prerequisites
 - git
@@ -24,7 +27,7 @@
 - set a FALSK_ENV value: "development":  `export FLASK_ENV=development`
   (set "production" for the live server))
 - `cp _example.config.py config.py`
-- set the relevant DB crednetials in `config.py`
+- set the relevant DB credentials in `config.py`
 - `flask db init` (initialize local db)
 - `flask db migrate -m "Initial db migration"`
 - `flask db upgrade`
