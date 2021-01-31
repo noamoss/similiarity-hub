@@ -8,7 +8,7 @@ def create_app():
 
     # Check relevant environment and load settings.
     if app.config['ENV'] == 'production':
-        app.config.from_objbect('config.ProductionConfig')
+        app.config.from_object('config.ProductionConfig')
         print('Production Env')
     else:
         app.config.from_object('config.DevelopmentConfig')
@@ -18,9 +18,10 @@ def create_app():
     db.init_app(app)
 
     # Migrate data  (if needed).
-    migrate = Migrate(app, db)
+    migrate = Migrate(app, db) # noqa
 
     return app
+
 
 app = create_app()
 
