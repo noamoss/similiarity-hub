@@ -22,8 +22,8 @@ class Item(db.Model):
         self.rank_date = rank_date
 
     def __rerp__(self):
-        return f"""id: {self.id}, 
-                   description: {self.description}, 
+        return f"""id: {self.id},
+                   description: {self.description},
                    source_url: {self.source_url},
                    category_id: {self.category_id},
                    category: {self.category},
