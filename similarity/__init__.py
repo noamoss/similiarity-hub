@@ -18,9 +18,10 @@ def create_app():
     db.init_app(app)
 
     # Migrate data  (if needed).
-    migrate = Migrate(app, db)
+    migrate = Migrate(app, db) # noqa
 
     return app
+
 
 app = create_app()
 
