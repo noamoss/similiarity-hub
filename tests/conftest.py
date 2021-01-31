@@ -7,10 +7,10 @@ def app():
     app = create_app()
     app.config.from_object('config.TestingConfig')
     db.init_app(app)
-    
-    with app.app_context():   
+
+    with app.app_context():
         db.create_all()
         print("yay")
-        yield app  
-        db.session.remove() 
+        yield app
+        db.session.remove()
         db.drop_all()
