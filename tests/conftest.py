@@ -10,7 +10,6 @@ def app():
 
     with app.app_context():
         db.create_all()
-        print("yay")
         yield app
         db.session.remove()
         db.drop_all()

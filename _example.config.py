@@ -41,4 +41,4 @@ class TestingConfig(Config):
     """
     Set the specific configurations for the automatic tests
     """
-    pass
+    TESTING = True
