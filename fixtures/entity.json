@@ -1,0 +1,30 @@
+[
+    {
+        "table": "entity",
+        "records": [{
+            "id": 0,
+            "category": "check_category",
+            "source": "example_source",
+            "features_periodic": "{'A':'50','B':'50'}",
+            "features_realtime": "{'C':'50','D':'50'}",
+            "result_count": 3
+        },
+        {
+            "id": 1,
+            "category": "check_category2",
+            "source": "example_source2",
+            "features_periodic": "{'A':'50','B':'50'}",
+            "features_realtime": "{'C':'50','D':'50'}",
+            "result_count": 5
+        },
+        {
+            "id": 2,
+            "category": "check_category3",
+            "source": "example_source3",
+            "features_periodic": "{'A':'50','B':'50'}",
+            "features_realtime": "{'C':'50','D':'50'}",
+            "result_count": 8
+        }
+        ]
+    }
+]
