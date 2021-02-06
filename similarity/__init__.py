@@ -1,7 +1,7 @@
 from flask import Flask
 from flask_migrate import Migrate
 from similarity.models import db
-
+from dotenv import load_dotenv
 
 def create_app():
     app = Flask(__name__)
