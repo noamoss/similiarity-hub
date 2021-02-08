@@ -1,6 +1,7 @@
 import os
 from similarity import local_config
 
+
 def get_env_variable(name):
     try:
         return os.environ.get(name)
@@ -18,6 +19,7 @@ def get_env_db_url(selected_environment):
         return create_db_url(local_config.PSQL_LOCAL_SETTINGS[selected_environment])
 
     return None
+
 
 # DB URLS for each Environment.
 DEV_DB_URL = get_env_db_url("development")
