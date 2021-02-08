@@ -1,6 +1,8 @@
-from similarity import app
+from flask import Blueprint
+
+simple_page = Blueprint('simple_page', __name__)
 
 
-@app.route('/')
+@simple_page.route('/')
 def hello_world():
     return 'Hello, World!?'

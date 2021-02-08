@@ -1,0 +1,24 @@
+# PostgreSQL DB settings.
+PSQL_LOCAL_SETTINGS = {
+    'development': {
+        'user': 'similarity',
+        'pass': 'similarity',
+        'host': 'localhost',
+        'port': 5432,
+        'db': 'similarity',
+    },
+    'testing': {
+        'user': 'similarity',
+        'pass': 'similarity',
+        'host': 'localhost',
+        'port': 5432,
+        'db': 'similarity',
+    },
+    'production': {
+        'user': 'similarity',
+        'pass': 'similarity',
+        'host': 'localhost',
+        'port': 5432,
+        'db': 'similarity',
+    },
+}

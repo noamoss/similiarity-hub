@@ -1,35 +1,28 @@
 from flask import Flask
-from flask_migrate import Migrate
-from similarity.models import db
-from dotenv import load_dotenv
+from flask_sqlalchemy import SQLAlchemy
 
-def create_app():
+from similarity.config import DevelopmentConfig, ProductionConfig
+
+db = SQLAlchemy()
+
+
+# App Factory.
+def create_app(config_class=DevelopmentConfig):
     app = Flask(__name__)
 
-    # Check relevant environment and load settings.
     if app.config['ENV'] == 'production':
-        app.config.from_object('config.ProductionConfig')
-        print('Production Env')
-    else:
-        app.config.from_object('config.DevelopmentConfig')
-        print('Development Env')
+        config_class = ProductionConfig
 
-    # Initiate connection with the database.
-    db.init_app(app)
+    app.config.from_object(config_class)
 
-    # Migrate data  (if needed).
-    migrate = Migrate(app, db) # noqa
+    with app.app_context():
+        db.init_app(app)
+        register_blueprints(app)
 
     return app
 
 
-app = create_app()
+def register_blueprints(app):
+    from similarity.views import simple_page
 
-# Importing after the `app` definition to avoid circular dependency.
-# Ignoring "flake8" errors about it.
-import similarity.views # noqa: E402,F401,E261
-
-
-# run the server
-if __name__ == '__main__':
-    app.run(debug=True)
+    app.register_blueprint(simple_page)

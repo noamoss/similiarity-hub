@@ -133,4 +133,4 @@ dmypy.json
 .vscode
 
 # Enviroment and credentials
-config.py
+similarity/local_config.py

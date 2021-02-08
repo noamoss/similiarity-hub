@@ -28,7 +28,7 @@
 - set a FLASK_APP value "similarity": `export FLASK_ENV=similarity` / add FLASK_ENV=similarity to the `.env` file
   (set "production" for the live server))
 - `pipenv shell`
-- `cp _example.config.py config.py`
+- `cp similarity/local_config.py.example local_config.py`
 - `cp _example.env .env`
 - set the relevant DB credentials in `config.py`
 - `flask db init` (initialize local db)

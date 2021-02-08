@@ -1,22 +1,11 @@
+import pytest
 from flask_fixtures import FixturesMixin
 from similarity.models import Item, Entity
 
 
-def test_development_config(app):
-    app.config.from_object('config.DevelopmentConfig')
-    assert app.config['DEBUG']
-    assert not app.config['TESTING']
-
-
-def test_testing_config(app):
-    app.config.from_object('config.TestingConfig')
-    assert app.config['DEBUG'] == False
-    assert app.config['TESTING']
-    assert not app.config['PRESERVE_CONTEXT_ON_EXCEPTION']
-
-
+@pytest.mark.skip
 class TestDBCAlls(FixturesMixin):
-    fixtures = ['entity.json', 'item.json']
+    fixtures = ['./fixtures/entity.json', './fixtures/item.json']
 
     def test_number_of_entites(app):
         entities = Entity.query.all()
