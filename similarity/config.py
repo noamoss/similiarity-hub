@@ -1,13 +1,4 @@
-import os
 from similarity import local_config
-
-
-def get_env_variable(name):
-    try:
-        return os.environ.get(name)
-    except KeyError:
-        message = "Expected environment variable '{}' not set.".format(name)
-        raise Exception(message)
 
 
 def create_db_url(db_config):
