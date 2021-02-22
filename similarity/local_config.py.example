@@ -5,20 +5,20 @@ PSQL_LOCAL_SETTINGS = {
         'pass': 'postgres',
         'host': 'localhost',
         'port': 5432,
-        'db': 'similarity',
+        'db': 'postgres',
     },
     'testing': {
         'user': 'postgres',
         'pass': 'postgres',
         'host': 'localhost',
         'port': 5432,
-        'db': 'similarity',
+        'db': 'postgres',
     },
     'production': {
         'user': 'postgres',
         'pass': 'postgres',
         'host': 'localhost',
         'port': 5432,
-        'db': 'similarity',
+        'db': 'postgres',
     },
 }

@@ -66,6 +66,10 @@ jobs:
       run: |
         pipenv run flask --version
         pipenv run flask db init
+      env:
+        FLASK_ENV: testing
+        FLASK_APP: similarity
+
     - name: Test with pytest
       run: |
         pipenv run pytest tests -v
