@@ -20,7 +20,7 @@ def create_app(config_class=DevelopmentConfig):
         db.init_app(app)
         register_blueprints(app)
 
-    migrate = Migrate(app, db)
+    migrate = Migrate(app, db) # noqa F841
 
     return app
 
