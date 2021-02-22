@@ -62,7 +62,10 @@ jobs:
     - name: Copy local configuration file
       run: |
         cp ./similarity/local_config.py.example ./similarity/local_config.py
-    - name: Test with pytest
+    - name: DB Initiate
       run: |
         pipenv run flask --version
+        pipenv run flask db init
+    - name: Test with pytest
+      run: |
         pipenv run pytest tests -v
