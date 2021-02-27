@@ -28,11 +28,17 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+
+    - name: Set up environment variables
+      run: |
+        echo "FLASK_ENV=testing" >> $GITHUB_ENV
+        echo "FLASK_APP=similarity" >> $GITHUB_ENV
+
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v2
       with:
         python-version: ${{ matrix.python-version }}
-    
+
     - name: Install pipenv
       run: |
         python -m pip install --upgrade pipenv wheel
@@ -42,7 +48,7 @@ jobs:
         key: ${{ runner.os }}-pip-${{ hashFiles('**/Pipfile') }}
         restore-keys: |
           ${{ runner.os }}-pip
-          
+
     - name: Install dependencies
       if: steps.cache-pipenv.outputs.cache-hit != 'true'
       run: |
@@ -62,17 +68,12 @@ jobs:
     - name: Copy local configuration file
       run: |
         cp ./similarity/local_config.py.example ./similarity/local_config.py
+
     - name: DB Initiate
       run: |
         pipenv run flask --version
         pipenv run flask db init
-      env:
-        FLASK_ENV: testing
-        FLASK_APP: similarity
 
     - name: Test with pytest
       run: |
         pipenv run pytest tests -v
-      env:
-        FLASK_ENV: testing
-        FLASK_APP: similarity
