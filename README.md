@@ -1,24 +1,39 @@
-# similiarity-hub
+# similarity-hub
 
-## Flexible entities similiarity engine for external data source.
+## Flexible entities similarity engine for external data source.
 
 ### Building Blocks [source](https://drive.google.com/file/d/1Ny9az4KV069HtQ5flKEluE9qjzwvwnAG/view?usp=sharing):
 
-<img src="https://raw.githubusercontent.com/noamoss/similiarity-hub/main/similiarity-v01.jpg" />
+<img src="https://raw.githubusercontent.com/noamoss/similarity-hub/main/similarity-v01.jpg" />
 
 ### Project Boards:
 - [Phase 1](https://github.com/noamoss/similiarity-hub/projects/1)
 
 
-### Techinical Stack:
+### Technical Stack:
+- Flask
+- PostgreSQL
+- React
+
+### prerequisites
+- git
+- python v.3.7.2+
+- pipvenv
+- postgresql
+
+### local env setup
+- Create a new postgresql DB.
+- `pipenv install` (in the repo's ROOT folder)
+- `cp similarity/local_config.py.example local_config.py` (then set the correct configuration of your local machine).
+- `cp _example.env .env`
+- `pipenv shell` (optional for the next commands; instead of adding `pipenv run` in the beginning for each one):
+   - `flask db init` (initialize local db)
+   - `flask db migrate -m "Initial db migration"`
+   - `flask db upgrade`
+
+### Run the server
+- `pipenv run flask run` (or inside `pipenv shell`)
 
 
-### Setup and installation
-- git clone
-- `pip install pipenv`
-- `pipenv install` (in the cloned repo folder)
-- setup a new postgresql DB, or get an existing DB credentials
-- set a FALSK_ENV value: "development" / "production" (i.e. `export FLASK_ENV=development`)
-- `cp _config.py config.py`
-- set the relevant DB crednetials in `config.py`
-- `flask run`
+### Testing
+- `pipenv run py.test` (or inside `pipenv shell`)
