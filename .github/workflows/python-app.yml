@@ -73,3 +73,6 @@ jobs:
     - name: Test with pytest
       run: |
         pipenv run pytest tests -v
+      env:
+        FLASK_ENV: testing
+        FLASK_APP: similarity
