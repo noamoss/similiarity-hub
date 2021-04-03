@@ -71,8 +71,8 @@ jobs:
 
     - name: DB Initiate
       run: |
-        pipenv run flask --version
-        pipenv run flask db init
+        pipenv run flask db migrate
+        pipenv run flask create-db
 
     - name: Test with pytest
       run: |

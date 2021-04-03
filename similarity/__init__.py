@@ -18,6 +18,11 @@ def create_app(config_class=DevelopmentConfig):
 
     with app.app_context():
         db.init_app(app)
+
+        # Registering the custom CLI commands.
+        from similarity import commands
+        commands.init_app(app)
+
         register_blueprints(app)
 
     migrate = Migrate(app, db) # noqa F841
